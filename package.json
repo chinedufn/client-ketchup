@@ -1,0 +1,37 @@
+{
+  "name": "client-state-update",
+  "version": "0.0.1",
+  "description": "Interface for efficiently keeping clients up to date with their authoritative state",
+  "main": "src/client-state-update.js",
+  "scripts": {
+    "test": "standard && node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinedufn/client-state-update.git"
+  },
+  "keywords": [
+    "client",
+    "state",
+    "update",
+    "game",
+    "server",
+    "websocket",
+    "ws"
+  ],
+  "author": "Chinedu Francis Nwafili <frankie.nwafili@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chinedufn/client-state-update/issues"
+  },
+  "homepage": "https://github.com/chinedufn/client-state-update#readme",
+  "devDependencies": {
+    "standard": "^7.1.2",
+    "tape": "^4.6.0",
+    "ws": "^1.1.1"
+  },
+  "dependencies": {
+    "changeset": "^0.1.0",
+    "xtend": "^4.0.1"
+  }
+}
