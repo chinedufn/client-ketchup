@@ -1,5 +1,4 @@
-var extend = require('xtend')
-var objectDiff = require('changeset')
+var objectDiff = require('minimal-object-diff')
 
 module.exports = CreateClientStateUpdater
 
@@ -13,26 +12,20 @@ function CreateClientStateUpdater () {
   }
 
   function AddKey (key, initialState) {
-    clientStateMap[key] = extend(initialState)
-    return clientStateMap[key]
+    clientStateMap[key] = initialState || {}
   }
 
   function DelKey (key) {
     delete clientStateMap[key]
-    return clientStateMap[key]
   }
 
-  // TODO: Optimize patch size
-  // One potential algorithm:
-  //   Look through patches
-  //     -> for all put patches we extend a patches object for this set of patches
-  //     -> for all del patches we create a dot prop string 'property.to.delete'
-  //     -> Return a new object to extend the old object with, as well as an array of deletions
+  /*
+   * TODO: Will probably end up needing a way to re-sync out of date clients. Worry about it when it happens
+   * i.e. accepting a hash of our clients state and verifying that it matches our authoritative value
+  */
+
   function UpdateKey (key, newState) {
-    var patches = objectDiff(clientStateMap[key], newState)
-    console.log(`regular patch size: ${JSON.stringify(patches).length}`)
-    console.log(`optimized patch size: ${1}`)
-    console.log(`original object: ${JSON.stringify(newState).length}`)
+    var patches = objectDiff.diff(clientStateMap[key], newState)
     clientStateMap[key] = newState
     return patches
   }
