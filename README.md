@@ -58,13 +58,7 @@ The method of transport
 ([websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events), [carrier pidgen](https://en.wikipedia.org/wiki/Homing_pigeon), etc)
 is up to the consumer.
 
-Typically you'll already have your network protocol in place and `client-ketchup` will be sprinkled in order to reduce bandwidth.
-
-```sh
-# view the demo in a local browser by pasting this into your terminal:
-# changes to the `demo` directory will live reload in your browser
-git clone https://github.com/chinedufn/client-ketchup && cd client-ketchup && npm install && npm run demo
-```
+Typically you'll already have your network protocol in place and `client-ketchup` will be added in to reduce bandwidth.
 
 ## API
 
