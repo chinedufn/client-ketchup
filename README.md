@@ -66,6 +66,49 @@ Typically you'll already have your network protocol in place and `client-ketchup
 git clone https://github.com/chinedufn/client-ketchup && cd client-ketchup && npm install && npm run demo
 ```
 
+## API
+
+### `CST.{add, del, update}`
+
+#### add
+
+Add a client to our client pool
+
+```js
+CST.add('cuid-1')
+CST.add('cuid-2', {thisIsOur: 'inital state object'})
+```
+
+#### del
+
+Remove a client from our client pool
+
+```js
+CST.del('cuid-1')
+```
+
+#### update
+
+Overwrite the clients state and receive JSON string-ified patches to send to a client
+
+Applying these patches to the old state creates the new state
+
+```js
+CST.add('cuid3', {hello: 'world'})
+var patches = CST.update('cuid2', {hello: 'mars'})
+
+// Client `cuid3` now has a state of {hello: 'mars'}
+
+// ... Later ... Likely on one of your clients
+
+var patches = require('minimal-object-diff').patch
+
+var patchTest = patch({hello: 'world'}, patches)
+
+console.log(patchTest)
+// => {hello: 'mars'}
+```
+
 ## TODO:
 
 - [ ] I suppose that there should be a way to deal with clients that somehow got out of sync. Maybe accepting a state hash and verifying that it matches our authoritative client state.. And if not.. generate the appropriate patches? Let's handle that if/when it happens
