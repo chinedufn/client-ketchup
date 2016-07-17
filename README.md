@@ -101,11 +101,11 @@ var patches = CST.update('cuid2', {hello: 'mars'})
 
 // ... Later ... Likely on one of your clients
 
-var patches = require('minimal-object-diff').patch
+var patch = require('minimal-object-diff').patch
 
-var patchTest = patch({hello: 'world'}, patches)
+var patchedObject = patch({hello: 'world'}, JSON.parse(patches))
 
-console.log(patchTest)
+console.log(patchedObject)
 // => {hello: 'mars'}
 ```
 
