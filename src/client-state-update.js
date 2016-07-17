@@ -28,7 +28,6 @@ function CreateClientStateUpdater () {
     var patches = objectDiff.diff(clientStateMap[key], newState)
     clientStateMap[key] = newState
 
-    // We expect patches to be sent over a network so we string-ify them.
-    return JSON.stringify(patches)
+    return patches
   }
 }

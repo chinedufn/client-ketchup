@@ -42,7 +42,7 @@ CST.add('some-client-id-1')
 var minimalPatches = CST.update({foo: 'bar', bazz: 'buzz'})
 
 // Use whatever network protocol you please in order to send updates
-myClients['some-client-id-1'].websocket.send(minimalPatches)
+myClients['some-client-id-1'].websocket.send(JSON.stringify(minimalPatches))
 
 /*
  * Later on our client
@@ -83,7 +83,7 @@ CST.del('cuid-1')
 
 #### update
 
-Overwrite the clients state and receive JSON string-ified patches to send to a client
+Overwrite the clients state and receive JSON patches to send to a client
 
 Applying these patches to the old state creates the new state
 
