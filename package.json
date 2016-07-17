@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chinedufn/client-state-update.git"
+    "url": "git+https://github.com/chinedufn/client-ketchup.git"
   },
   "keywords": [
     "client",
@@ -23,13 +23,12 @@
   "author": "Chinedu Francis Nwafili <frankie.nwafili@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chinedufn/client-state-update/issues"
+    "url": "https://github.com/chinedufn/client-ketchup/issues"
   },
-  "homepage": "https://github.com/chinedufn/client-state-update#readme",
+  "homepage": "https://github.com/chinedufn/client-ketchup#readme",
   "devDependencies": {
     "standard": "^7.1.2",
-    "tape": "^4.6.0",
-    "ws": "^1.1.1"
+    "tape": "^4.6.0"
   },
   "dependencies": {
     "minimal-object-diff": "^0.1.0"
