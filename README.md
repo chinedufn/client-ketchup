@@ -34,7 +34,7 @@ $ npm install --save client-ketchup
 var CreateClientStateTracker = require('client-ketchup')
 // Create a new client state tracker. You'll typically use one of these and add/remove different clients to it
 var CST = CreateClientStateTracker({
-  differ: require('minimal-object-diff').diff
+  differ: require('fast-json-patch').compare
 })
 
 // Add a new client
