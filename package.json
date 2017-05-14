@@ -27,10 +27,8 @@
   },
   "homepage": "https://github.com/chinedufn/client-ketchup#readme",
   "devDependencies": {
+    "minimal-object-diff": "^0.1.0",
     "standard": "^7.1.2",
     "tape": "^4.6.0"
-  },
-  "dependencies": {
-    "minimal-object-diff": "^0.1.0"
   }
 }

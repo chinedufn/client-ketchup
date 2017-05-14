@@ -1,8 +1,6 @@
-var objectDiff = require('minimal-object-diff')
-
 module.exports = CreateClientStateUpdater
 
-function CreateClientStateUpdater () {
+function CreateClientStateUpdater (opts) {
   var clientStateMap = {}
 
   return {
@@ -25,7 +23,7 @@ function CreateClientStateUpdater () {
   */
 
   function UpdateKey (key, newState) {
-    var patches = objectDiff.diff(clientStateMap[key], newState)
+    var patches = opts.differ(clientStateMap[key], newState)
     clientStateMap[key] = newState
 
     return patches
