@@ -49,7 +49,7 @@ myClients['some-client-id-1'].websocket.send(JSON.stringify(minimalPatches))
 /*
  * Later on our client
  */
-var patchObject = require('minimal-object-diff').patch
+var patchObject = require('fast-json-patch').apply
 var minimalPatches = GetPatchesFromServerSomehow()
 var myLocalState = GetLocalState()
 myLocalState = patchObject(myLocalState, JSON.parse(minimalPatches))
@@ -97,7 +97,7 @@ var patches = CST.update('cuid2', {hello: 'mars'})
 
 // ... Later ... Likely on one of your clients
 
-var patch = require('minimal-object-diff').patch
+var patch = require('fast-json-patch').apply
 
 var patchedObject = patch({hello: 'world'}, JSON.parse(patches))
 
@@ -111,7 +111,7 @@ console.log(patchedObject)
 
 ## See Also
 
-- [minimal-object-diff](https://github.com/chinedufn/minimal-object-diff)
+- [fast-json-patch](https://github.com/Starcounter-Jack/JSON-Patch)
 
 
 ## License
